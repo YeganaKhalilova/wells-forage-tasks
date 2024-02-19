@@ -1,0 +1,89 @@
+package com.wellsfargo.counselor.entity;
+
+import jakarta.persistence.*;
+
+import java.util.Date;
+
+@Entity
+public class Security {
+
+    @Id
+    @GeneratedValue()
+    private final Long securityId;
+    @ManyToOne
+    @JoinColumn(name = "portfolio_id", nullable = false)
+    private Portfolio portfolio;
+    @Column(name = "name",nullable = false)
+    private String name;
+
+    @Column(name = "category",nullable = false)
+    private String category;
+    @Column(name = "purchase_price",nullable = false)
+    private int purchasePrice;
+    @Column(name = "purchase_date",nullable = false)
+    private Date purchaseDate;
+    @Column(name = "quantity",nullable = false)
+    private  int quantity;
+
+    public Security(Long securityId, Portfolio portfolio, String name, String category, int purchasePrice, Date purchaseDate, int quantity) {
+        this.securityId = securityId;
+        this.portfolio = portfolio;
+        this.name = name;
+        this.category = category;
+        this.purchasePrice = purchasePrice;
+        this.purchaseDate = purchaseDate;
+        this.quantity = quantity;
+    }
+
+    public Long getSecurityId() {
+        return securityId;
+    }
+
+    public Portfolio getPortfolio() {
+        return portfolio;
+    }
+
+    public void setPortfolio(Portfolio portfolio) {
+        this.portfolio = portfolio;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public int getPurchasePrice() {
+        return purchasePrice;
+    }
+
+    public void setPurchasePrice(int purchasePrice) {
+        this.purchasePrice = purchasePrice;
+    }
+
+    public Date getPurchaseDate() {
+        return purchaseDate;
+    }
+
+    public void setPurchaseDate(Date purchaseDate) {
+        this.purchaseDate = purchaseDate;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+}
