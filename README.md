@@ -1,3 +1,2 @@
-# Task 2 Starter Repo
-Contains Everything you need to get started on task 2 of Forage's Wells Fargo software engineering program
-# wells-forage-tasks
+# :airplane: Credit Rewards Converter :airplane:
+This is the project repo for the JPMC Software Engineering Lite Program, consult the program instructions for more information.
